@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    overflow-x: hidden;
+}
+h2{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-size: 48px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px  rgb(62, 130, 255);
+    
+}
+section {
+    background-color: rgba(12, 240, 191, 0.562);
+    
+}
+.container{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-left: 480px;
+}
+.form-campo{
+    margin-bottom: 16px;
+    
+}
+.form-campo label{
+    font-weight: bold;
+    display: block;
+    padding-bottom: 10px;
+    text-align: center;
+    color: rgb(3, 4, 85);
+    font-size: 20px;
+}
+.form-campo input {
+    width: 100%;
+    display: block;
+    padding: 8px;
+}
+form {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    background-color: rgba(183, 0, 255, 0.925);
+    color: antiquewhite;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px lightcoral;
+}
+form buttom{
+    max-width: 120px;
+}
+footer{
+    background-color: rgba(224, 41, 41, 0.842);
+    padding-top: 16px;
+    color: blanchedalmond;
+    font-size: 12px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio_plugins_jquery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&family=Poppins:wght@300;400&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h2>Formulário</h2>
+            <form>
+                <div class="form-campo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Nome Completo">
+                </div>
+                <div class="form-campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="email@email.com">
+                </div>
+                <div class="form-campo">
+                    <label for="telefone">Telefone:</label>
+                    <input type="telefone" id="telefone" name="telefone" required placeholder="(00)00000-0000" maxlength="15">
+                </div>
+                <div class="form-campo">
+                    <label for="CPF">CPF:</label>
+                    <input type="CPF" id="CPF" name="CPF" required placeholder="000.000.000-00" maxlength="14">
+                </div>
+                <div class="form-campo">
+                    <label for="endereco">Endereco Completo:</label>
+                    <input type="text" id="endereco" name="endereco" required placeholder="Endereco Completo">
+                </div>
+                <div class="form-campo">
+                    <label for="CEP">CEP:</label>
+                    <input type="CEP" id="CEP" name="CEP" required placeholder="00000-000" maxlength="9">
+                </div>
+                <button type="submit">Enviar dados</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+    <div class="container">
+        <p>2023 &copy; Jacqueline Mattisen -  Todos os direitos reservados</p>
+    </div>
+    </footer>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript"src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="./plugin/jquery.mask.min.js"></script>
+    <script src="./plugin/jquery.validate.min.js"></script>
+    <script src="./plugin/messages_pt_BR.min.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#telefone').mask('(00) 00000-0000')
+            $('#CEP').mask('00000-000'); 
+            $('#CPF').mask('000.000.000-00');
+            
+            $('form').validate({
+            rules: {
+                nome: {
+                    required: true,
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                telefone: {
+                    required: true,
+                },
+                CEP: {
+                    required: true,
+                }
+                
+            },
+            messages:{
+                nome: 'Por favor, insira o seu nome completo'
+            },
+            submitHandler: function(form){
+                console.log(form)
+            },
+            invalidHandler: function(evento, validador){
+                let camposIncorretos = validator.numeberOfInvalids();
+                console.log (camposIncorretos);
+                if (camposIncorretos){
+                    alert("Existem $(camposIncorretos) campos incorretos")
+                }
+            }
+        })
+    })
+
+</script>
+</body>
+</html>
